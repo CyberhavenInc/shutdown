@@ -19,3 +19,9 @@ func WaitForShutdown() bool {
 
 	return true
 }
+
+func WaitForShutdownAndDo(f func()) {
+	if WaitForShutdown() {
+		f()
+	}
+}
